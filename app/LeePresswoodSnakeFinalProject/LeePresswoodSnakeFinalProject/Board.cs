@@ -34,5 +34,10 @@ namespace LeePresswoodSnakeFinalProject
         {//Game tick happened, so move the snake forward according to the next_direction variable.
 
         }
+
+        public bool isDead()
+        {
+            return false;
+        }
     }
 }

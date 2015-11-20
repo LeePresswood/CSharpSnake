@@ -1,1 +1,9 @@
 C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\bin\Debug\LeePresswoodSnakeFinalProject.exe.config
+C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\bin\Debug\LeePresswoodSnakeFinalProject.exe
+C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\bin\Debug\LeePresswoodSnakeFinalProject.pdb
+C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\obj\Debug\LeePresswoodSnakeFinalProject.csprojResolveAssemblyReference.cache
+C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\obj\Debug\LeePresswoodSnakeFinalProject.form_game.resources
+C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\obj\Debug\LeePresswoodSnakeFinalProject.Properties.Resources.resources
+C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\obj\Debug\LeePresswoodSnakeFinalProject.csproj.GenerateResource.Cache
+C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\obj\Debug\LeePresswoodSnakeFinalProject.exe
+C:\Users\Lee\Documents\GitHub\CSharpSnake\app\LeePresswoodSnakeFinalProject\LeePresswoodSnakeFinalProject\obj\Debug\LeePresswoodSnakeFinalProject.pdb
