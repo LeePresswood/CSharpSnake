@@ -1,0 +1,7 @@
+﻿For my final project, I will be developing a clone of Snake.
+
+Snake is a game where you start with a single block on the screen. This block is your character. The characterÕs goal is go left, right, up, or down to collect apples that are randomly placed on the ground. Every time an apple is collected, your snake grows one block longer. Every time the head of your snake moves, every segment after it moves to the previous location of the segment in front of it.
+
+The challenge in the game comes in making sure you donÕt die while you collect apples. A death happens whenever you hit one of the four borders of the screen or if the snakeÕs head collides with another one of its segments. Thus, the longer your snake becomes, the more difficult the game is.
+
+To make this project a little more challenging, I will also give the user options for customizing how the game is played. For example, I will allow the user to change the speed of the snake. A faster snake will be more challenging than a slower snake. Another addition I could add if time permits is the addition of special apples that cause additional effects to happen to the snake, such as an apple that reverses the movement of the snake.
