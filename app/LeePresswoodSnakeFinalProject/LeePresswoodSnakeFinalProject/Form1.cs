@@ -16,5 +16,10 @@ namespace LeePresswoodSnakeFinalProject
         {
             InitializeComponent();
         }
+
+        private void quitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
