@@ -20,6 +20,7 @@ namespace LeePresswoodSnakeFinalProject
 
         //Locations of the snake.
         public List<Segment> segments;
+        public int apple_x, apple_y;
 
         //The direction the snake will move in the next tick.
         private Direction next_direction;
@@ -35,7 +36,32 @@ namespace LeePresswoodSnakeFinalProject
 
         public void update()
         {//Game tick happened, so move the snake forward according to the next_direction variable.
+            //For all snake segments behind the head, move.
+            if (segments.Count() > 1)
+            {
+                for (int i = 1; i < segments.Count(); i++)
+                {
+                    segments[i].x = segments[i - 1].x;
+                    segments[i].y = segments[i - 1].y;
+                }
+            }
 
+            //Move head based upon the direction.
+            switch (next_direction)
+            {
+                case Direction.Left:
+                    segments[0].x -= block_size;
+                    break;
+                case Direction.Right:
+                    segments[0].x += block_size;
+                    break;
+                case Direction.Up:
+                    segments[0].y -= block_size;
+                    break;
+                case Direction.Down:
+                    segments[0].y += block_size;
+                    break;
+            }
         }
 
         public bool isDead()
