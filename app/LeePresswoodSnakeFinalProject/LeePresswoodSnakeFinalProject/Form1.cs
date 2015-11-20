@@ -39,5 +39,10 @@ namespace LeePresswoodSnakeFinalProject
         {
             Application.Exit();
         }
+
+        private void timer_game_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
