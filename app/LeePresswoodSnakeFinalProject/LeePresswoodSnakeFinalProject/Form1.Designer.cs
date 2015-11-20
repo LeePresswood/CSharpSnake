@@ -34,10 +34,10 @@
             this.startGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textbox_score = new System.Windows.Forms.ToolStripTextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.timer_game = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.textbox_score = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,23 +65,31 @@
             // startGameToolStripMenuItem
             // 
             this.startGameToolStripMenuItem.Name = "startGameToolStripMenuItem";
-            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.startGameToolStripMenuItem.Text = "Start";
             this.startGameToolStripMenuItem.Click += new System.EventHandler(this.startGameToolStripMenuItem_Click);
             // 
             // resumeToolStripMenuItem
             // 
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.resumeToolStripMenuItem.Text = "Resume";
             this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
             // pauseGameToolStripMenuItem
             // 
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
-            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.pauseGameToolStripMenuItem.Text = "Pause";
             this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
+            // 
+            // textbox_score
+            // 
+            this.textbox_score.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.textbox_score.Name = "textbox_score";
+            this.textbox_score.ReadOnly = true;
+            this.textbox_score.Size = new System.Drawing.Size(100, 23);
+            this.textbox_score.Text = "Segments: ";
             // 
             // splitter1
             // 
@@ -94,13 +102,6 @@
             // timer_game
             // 
             this.timer_game.Tick += new System.EventHandler(this.timer_game_Tick);
-            // 
-            // textbox_score
-            // 
-            this.textbox_score.Name = "textbox_score";
-            this.textbox_score.ReadOnly = true;
-            this.textbox_score.Size = new System.Drawing.Size(100, 23);
-            this.textbox_score.Text = "Score: ";
             // 
             // form_game
             // 

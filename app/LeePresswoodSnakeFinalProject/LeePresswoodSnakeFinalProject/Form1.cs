@@ -46,10 +46,6 @@ namespace LeePresswoodSnakeFinalProject
             pauseGameToolStripMenuItem.Enabled = false;
         }
 
-        private void quitGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
         private void timer_game_Tick(object sender, EventArgs e)
         {//Only tick if not dead.
             if (!board.isDead())
@@ -65,7 +61,7 @@ namespace LeePresswoodSnakeFinalProject
 
 
             //Draw score.
-            textbox_score.Text = "Score: " + board.segments.Count();
+            textbox_score.Text = "Segments: " + board.segments.Count();
         }
     }
 }

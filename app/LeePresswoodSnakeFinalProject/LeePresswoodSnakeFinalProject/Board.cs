@@ -27,7 +27,10 @@ namespace LeePresswoodSnakeFinalProject
         public Board(int start, int width, int height)
         {
             block_size = width / BLOCKS_ACROSS;
-            next_direction = Direction.Left;
+            next_direction = Direction.Right;
+
+            segments = new List<Segment>();
+            segments.Add(new Segment(2, 2));
         }
 
         public void update()
