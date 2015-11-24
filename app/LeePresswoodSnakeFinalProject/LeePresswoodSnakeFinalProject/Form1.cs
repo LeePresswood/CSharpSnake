@@ -57,8 +57,15 @@ namespace LeePresswoodSnakeFinalProject
 
         private void draw()
         {//Draw the board according to the current state.
-            //Draw board.
+            //Remove old buttons.
 
+
+            //Draw board.
+            Button[] buttons = new Button[board.segments.Count()];
+            foreach(Button b in buttons)
+            {
+                b.SetBounds(1, 1, board.block_size, board.block_size);
+            }
 
             //Draw score.
             textbox_score.Text = "Segments: " + board.segments.Count();
