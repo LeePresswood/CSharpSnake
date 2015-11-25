@@ -15,7 +15,7 @@ namespace LeePresswoodSnakeFinalProject
     class Board
     {
         //Size of blocks.
-        private const int BLOCKS_ACROSS = 10;
+        private const int BLOCKS_ACROSS = 25;
         public int block_size;
 
         //Locations of the snake.
@@ -25,7 +25,7 @@ namespace LeePresswoodSnakeFinalProject
         //The direction the snake will move in the next tick.
         private Direction next_direction;
 
-        public Board(int start, int width, int height)
+        public Board(int start, int width)
         {
             block_size = width / BLOCKS_ACROSS;
             next_direction = Direction.Right;
@@ -50,16 +50,16 @@ namespace LeePresswoodSnakeFinalProject
             switch (next_direction)
             {
                 case Direction.Left:
-                    segments[0].x -= block_size;
+                    segments[0].x -= 1;
                     break;
                 case Direction.Right:
-                    segments[0].x += block_size;
+                    segments[0].x += 1;
                     break;
                 case Direction.Up:
-                    segments[0].y -= block_size;
+                    segments[0].y -= 1;
                     break;
                 case Direction.Down:
-                    segments[0].y += block_size;
+                    segments[0].y += 1;
                     break;
             }
         }

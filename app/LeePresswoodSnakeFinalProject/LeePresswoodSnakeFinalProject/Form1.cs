@@ -29,7 +29,7 @@ namespace LeePresswoodSnakeFinalProject
             timer_game.Enabled = true;
             resumeToolStripMenuItem.Enabled = false;
             pauseGameToolStripMenuItem.Enabled = true;
-            board = new Board(menuStrip1.Height, this.Width, this.Height);
+            board = new Board(menuStrip1.Height, this.Width);
         }
 
         private void resumeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,13 +58,20 @@ namespace LeePresswoodSnakeFinalProject
         private void draw()
         {//Draw the board according to the current state.
             //Remove old buttons.
+            while (Controls.Count > 1)
+            {
+                Controls.RemoveAt(1);
+            }
 
-
-            //Draw board.
+            //Draw board
             Button[] buttons = new Button[board.segments.Count()];
             for (int i = 0; i < board.segments.Count(); i++)
             {
                 buttons[i] = new Button();
+                buttons[i].BackColor = Color.Red;
+                buttons[i].TabStop = false;
+                buttons[i].FlatStyle = FlatStyle.Flat;
+                buttons[i].FlatAppearance.BorderSize = 0;
                 buttons[i].SetBounds(board.block_size * board.segments[i].x, menuStrip1.Height + board.block_size * board.segments[i].y, board.block_size, board.block_size);
                 Controls.Add(buttons[i]);
             }
