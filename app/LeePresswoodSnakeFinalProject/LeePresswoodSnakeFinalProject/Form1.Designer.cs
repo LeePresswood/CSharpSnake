@@ -35,7 +35,6 @@
             this.resumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textbox_score = new System.Windows.Forms.ToolStripTextBox();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.timer_game = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
@@ -91,14 +90,6 @@
             this.textbox_score.Size = new System.Drawing.Size(100, 23);
             this.textbox_score.Text = "Segments: ";
             // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 27);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 408);
-            this.splitter1.TabIndex = 1;
-            this.splitter1.TabStop = false;
-            // 
             // timer_game
             // 
             this.timer_game.Tick += new System.EventHandler(this.timer_game_Tick);
@@ -109,7 +100,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(434, 435);
-            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -129,7 +119,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pauseGameToolStripMenuItem;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Timer timer_game;
         private System.Windows.Forms.ToolStripMenuItem resumeToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;

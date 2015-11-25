@@ -62,9 +62,11 @@ namespace LeePresswoodSnakeFinalProject
 
             //Draw board.
             Button[] buttons = new Button[board.segments.Count()];
-            foreach(Button b in buttons)
+            for (int i = 0; i < board.segments.Count(); i++)
             {
-                b.SetBounds(1, 1, board.block_size, board.block_size);
+                buttons[i] = new Button();
+                buttons[i].SetBounds(board.block_size * board.segments[i].x, menuStrip1.Height + board.block_size * board.segments[i].y, board.block_size, board.block_size);
+                Controls.Add(buttons[i]);
             }
 
             //Draw score.
