@@ -22,6 +22,9 @@ namespace LeePresswoodSnakeFinalProject
             timer_game.Enabled = false;
             resumeToolStripMenuItem.Enabled = false;
             pauseGameToolStripMenuItem.Enabled = false;
+
+           panel1.BackColor = Color.Yellow;
+           panel1.TabStop = false;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -55,7 +58,7 @@ namespace LeePresswoodSnakeFinalProject
             timer_game.Enabled = true;
             resumeToolStripMenuItem.Enabled = false;
             pauseGameToolStripMenuItem.Enabled = true;
-            board = new Board(menuStrip1.Height, this.Width);
+            board = new Board(menuStrip1.Height, panel1.Width);
         }
 
         private void resumeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,9 +87,9 @@ namespace LeePresswoodSnakeFinalProject
         private void draw()
         {//Draw the board according to the current state.
             //Remove old buttons
-            while (Controls.Count > 1)
+            while (panel1.Controls.Count > 0)
             {//First child is the menu bar. Otherwise, everything is a snake.
-                Controls.RemoveAt(1);
+                panel1.Controls.RemoveAt(0);
             }
 
             //Draw board
@@ -98,8 +101,9 @@ namespace LeePresswoodSnakeFinalProject
                 buttons[i].TabStop = false;
                 buttons[i].FlatStyle = FlatStyle.Flat;
                 buttons[i].FlatAppearance.BorderSize = 0;
-                buttons[i].SetBounds(board.block_size * board.segments[i].x, menuStrip1.Height + board.block_size * board.segments[i].y, board.block_size, board.block_size);
-                Controls.Add(buttons[i]);
+                buttons[i].SetBounds(board.block_size * board.segments[i].x, board.block_size * board.segments[i].y, board.block_size, board.block_size);
+                
+                panel1.Controls.Add(buttons[i]);
             }
 
             //Draw score.
