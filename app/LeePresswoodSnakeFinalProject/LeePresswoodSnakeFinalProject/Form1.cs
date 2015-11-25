@@ -17,11 +17,37 @@ namespace LeePresswoodSnakeFinalProject
         public form_game()
         {
             InitializeComponent();
-            
+
             //Timer and pause button should both be disabled upon creating the form.
             timer_game.Enabled = false;
             resumeToolStripMenuItem.Enabled = false;
             pauseGameToolStripMenuItem.Enabled = false;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Left)
+            {
+                board.setDirection(Direction.Left);
+                return true;
+            }
+            else if (keyData == Keys.Right)
+            {
+                board.setDirection(Direction.Right);
+                return true;
+            }
+            else if (keyData == Keys.Up)
+            {
+                board.setDirection(Direction.Up);
+                return true;
+            }
+            else if (keyData == Keys.Down)
+            {
+                board.setDirection(Direction.Down);
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void startGameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,9 +83,9 @@ namespace LeePresswoodSnakeFinalProject
 
         private void draw()
         {//Draw the board according to the current state.
-            //Remove old buttons.
+            //Remove old buttons
             while (Controls.Count > 1)
-            {
+            {//First child is the menu bar. Otherwise, everything is a snake.
                 Controls.RemoveAt(1);
             }
 

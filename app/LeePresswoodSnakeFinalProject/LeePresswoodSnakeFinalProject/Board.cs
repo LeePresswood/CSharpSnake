@@ -15,7 +15,7 @@ namespace LeePresswoodSnakeFinalProject
     class Board
     {
         //Size of blocks.
-        private const int BLOCKS_ACROSS = 25;
+        private const int BLOCKS_ACROSS = 30;
         public int block_size;
 
         //Locations of the snake.
@@ -62,6 +62,11 @@ namespace LeePresswoodSnakeFinalProject
                     segments[0].y += 1;
                     break;
             }
+        }
+
+        public void setDirection(Direction d)
+        {
+            next_direction = d;
         }
 
         public bool isDead()
