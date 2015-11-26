@@ -51,11 +51,11 @@ namespace LeePresswoodSnakeFinalProject
             {
                 for (int i = segments.Count() - 1; i != 0; i--)
                 {
-                    //if (i == segments.Count() - 1 && just_spawned)
+                    if (i == segments.Count() - 1 && just_spawned)
                     {//After eating an apple, the new segment will be added to the list at the location of the tail of the snake. This segment should not move until one update later to show growth.
                         just_spawned = false;
                     }
-                    //else
+                    else
                     {
                         segments[i].x = segments[i - 1].x;
                         segments[i].y = segments[i - 1].y;
