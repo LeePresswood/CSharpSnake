@@ -99,6 +99,12 @@ namespace LeePresswoodSnakeFinalProject
             {//Update the board and draw it.
                 board.update();
                 draw();
+
+                //Check death. Stop timer if dead.
+                if (board.isDead())
+                {
+                    timer_game.Stop();
+                }
             }
         }
 
@@ -106,8 +112,8 @@ namespace LeePresswoodSnakeFinalProject
         {//Draw the board according to the current state.
             //Remove old buttons
             while (panel1.Controls.Count > 0)
-            {//First child is the menu bar. Otherwise, everything is a snake.
-                panel1.Controls.RemoveAt(0);
+            {
+                panel1.Controls.Clear();
             }
 
             //Draw board

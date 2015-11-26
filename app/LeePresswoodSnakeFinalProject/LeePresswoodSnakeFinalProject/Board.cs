@@ -42,14 +42,19 @@ namespace LeePresswoodSnakeFinalProject
             //For all snake segments behind the head, move.
             if (segments.Count() > 1)
             {
-                for (int i = 1; i < segments.Count(); i++)
+                for (int i = segments.Count() - 1; i != 1; i--)
                 {
-                    if(i == segments.Count() - 1 && just_spawned)
-
-                    segments[i].x = segments[i - 1].x;
-                    segments[i].y = segments[i - 1].y;
+                    if (i == segments.Count() - 1 && just_spawned)
+                    {//After eating an apple, the new segment will be added to the list at the location of the tail of the snake. This segment should not move until one update later to show growth.
+                        just_spawned = false; Console.WriteLine(segments.Last().x +  ":" + segments.Last().y);
+                    }
+                    else
+                    {
+                        segments[i].x = segments[i - 1].x;
+                        segments[i].y = segments[i - 1].y;
+                    }
                 }
-            }
+            } 
 
             //Move head based upon the direction.
             switch (next_direction)
@@ -73,8 +78,6 @@ namespace LeePresswoodSnakeFinalProject
             {
                 collectApple();
             }
-
-            //Check death.
         }
 
         public void setDirection(Direction d)
@@ -89,8 +92,9 @@ namespace LeePresswoodSnakeFinalProject
 
         public void collectApple()
         {
-            //Add to the length of the snake.
-            
+            //Add to the length of the snake. The new segment should be located on top of the tail of the snake.
+            segments.Add(new GameTile(segments.Last().x, segments.Last().y));
+            just_spawned = true;
             
             //Spawn a new apple.
             placeRandomApple();
@@ -99,7 +103,6 @@ namespace LeePresswoodSnakeFinalProject
         public void placeRandomApple()
         {//Place an apple on the board. The apple is guaranteed to not be located on top of the snake.
             bool is_bad;
-            
             do
             {
                 is_bad = false;
