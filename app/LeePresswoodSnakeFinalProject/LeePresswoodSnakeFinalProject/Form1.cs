@@ -30,7 +30,7 @@ namespace LeePresswoodSnakeFinalProject
             if (keyData == Keys.Left)
             {
                 //You can only set this direction if not moving in the opposite direction.
-                if (board.getDirection() != Direction.Right)
+                if (board.getLastDirection() != Direction.Right)
                 {
                     board.setDirection(Direction.Left);
                 }
@@ -40,7 +40,7 @@ namespace LeePresswoodSnakeFinalProject
             else if (keyData == Keys.Right)
             {
                 //You can only set this direction if not moving in the opposite direction.
-                if (board.getDirection() != Direction.Left)
+                if (board.getLastDirection() != Direction.Left)
                 {
                     board.setDirection(Direction.Right);
                 }
@@ -50,7 +50,7 @@ namespace LeePresswoodSnakeFinalProject
             else if (keyData == Keys.Up)
             {
                 //You can only set this direction if not moving in the opposite direction.
-                if (board.getDirection() != Direction.Down)
+                if (board.getLastDirection() != Direction.Down)
                 {
                     board.setDirection(Direction.Up);
                 }
@@ -60,7 +60,7 @@ namespace LeePresswoodSnakeFinalProject
             else if (keyData == Keys.Down)
             {
                 //You can only set this direction if not moving in the opposite direction.
-                if (board.getDirection() != Direction.Up)
+                if (board.getLastDirection() != Direction.Up)
                 {
                     board.setDirection(Direction.Down);
                 }

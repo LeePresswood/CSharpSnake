@@ -25,6 +25,7 @@ namespace LeePresswoodSnakeFinalProject
 
         //The direction the snake will move in the next tick.
         private Direction next_direction;
+        private Direction last_direction;
 
         public Board(int width)
         {
@@ -50,11 +51,11 @@ namespace LeePresswoodSnakeFinalProject
             {
                 for (int i = segments.Count() - 1; i != 1; i--)
                 {
-                    if (i == segments.Count() - 1 && just_spawned)
+                    //if (i == segments.Count() - 1 && just_spawned)
                     {//After eating an apple, the new segment will be added to the list at the location of the tail of the snake. This segment should not move until one update later to show growth.
-                        just_spawned = false; Console.WriteLine(segments.Last().x +  ":" + segments.Last().y);
+                        just_spawned = false;
                     }
-                    else
+                    //else
                     {
                         segments[i].x = segments[i - 1].x;
                         segments[i].y = segments[i - 1].y;
@@ -78,6 +79,7 @@ namespace LeePresswoodSnakeFinalProject
                     segments[0].y += 1;
                     break;
             }
+            last_direction = next_direction;
         }
 
         public void setDirection(Direction d)
@@ -85,15 +87,19 @@ namespace LeePresswoodSnakeFinalProject
             next_direction = d;
         }
 
-        public Direction getDirection()
+        public Direction getLastDirection()
         {
-            return next_direction;
+            return last_direction;
         }
 
         public void collectApple()
         {
             //Add to the length of the snake. The new segment should be located on top of the tail of the snake.
-            segments.Add(new GameTile(segments.Last().x, segments.Last().y));
+            segments.Add(new GameTile(segments.Last().x, segments.Last().y)); 
+            
+            //foreach(GameTile segment in segments)
+            //    Console.WriteLine(segments.IndexOf(segment) + ": " + segment.x + " : " + segment.y);
+            
             just_spawned = true;
             
             //Spawn a new apple.

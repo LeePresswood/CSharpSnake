@@ -93,6 +93,7 @@
             // 
             // timer_game
             // 
+            this.timer_game.Interval = 75;
             this.timer_game.Tick += new System.EventHandler(this.timer_game_Tick);
             // 
             // panel1
