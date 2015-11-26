@@ -39,6 +39,12 @@ namespace LeePresswoodSnakeFinalProject
 
         public void update()
         {//Game tick happened, so move the snake forward according to the next_direction variable.
+            //Check apple collect.
+            if (segments[0].x == apple_x && segments[0].y == apple_y)
+            {
+                collectApple();
+            }
+
             //For all snake segments behind the head, move.
             if (segments.Count() > 1)
             {
@@ -71,12 +77,6 @@ namespace LeePresswoodSnakeFinalProject
                 case Direction.Down:
                     segments[0].y += 1;
                     break;
-            }
-
-            //Check apple collect.
-            if (segments[0].x == apple_x && segments[0].y == apple_y)
-            {
-                collectApple();
             }
         }
 
@@ -131,7 +131,15 @@ namespace LeePresswoodSnakeFinalProject
 
         public bool isDead()
         {
-            return false;
+            bool border_check = segments.First().x < 0 || segments.First().x >= BLOCKS_ACROSS || segments.First().y < 0 || segments.First().y >= BLOCKS_ACROSS;
+            
+            bool segment_check = false;
+            for (int i = 1; i < segments.Count(); i++)
+            {
+                segment_check |= segments.First().x == segments[i].x && segments.First().y == segments[i].y;
+            }
+
+            return border_check || segment_check;
         }
     }
 }
