@@ -25,7 +25,7 @@ namespace LeePresswoodSnakeFinalProject
         //The direction the snake will move in the next tick.
         private Direction next_direction;
 
-        public Board(int start, int width)
+        public Board(int width)
         {
             block_size = width / BLOCKS_ACROSS;
             next_direction = Direction.Right;
@@ -72,6 +72,34 @@ namespace LeePresswoodSnakeFinalProject
         public Direction getDirection()
         {
             return next_direction;
+        }
+
+        public void collectApple()
+        {
+
+        }
+
+        public void placeRandomApple()
+        {//Place an apple on the board. The apple is guaranteed to not be located on top of the snake.
+            bool is_bad;
+            
+            do
+            {
+                is_bad = false;
+
+                //Get an X and Y.
+                int a_x = new Random().Next(BLOCKS_ACROSS);
+                int a_y = new Random().Next(BLOCKS_ACROSS);
+
+                //Check.
+                foreach (GameTile segment in segments)
+                {
+                    if (segment.x == a_x && segment.y == a_y)
+                    {
+                        is_bad = true;
+                    }
+                }
+            } while (is_bad);
         }
 
         public bool isDead()
