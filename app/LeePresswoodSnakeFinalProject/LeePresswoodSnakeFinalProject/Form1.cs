@@ -76,7 +76,7 @@ namespace LeePresswoodSnakeFinalProject
             timer_game.Enabled = true;
             resumeToolStripMenuItem.Enabled = false;
             pauseGameToolStripMenuItem.Enabled = true;
-            board = new Board(menuStrip1.Height, panel1.Width);
+            board = new Board(panel1.Width);
         }
 
         private void resumeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace LeePresswoodSnakeFinalProject
             for (int i = 0; i < board.segments.Count(); i++)
             {
                 buttons[i] = new Button();
-                buttons[i].BackColor = Color.Red;
+                buttons[i].BackColor = Color.Blue;
                 buttons[i].TabStop = false;
                 buttons[i].FlatStyle = FlatStyle.Flat;
                 buttons[i].FlatAppearance.BorderSize = 0;
@@ -123,6 +123,16 @@ namespace LeePresswoodSnakeFinalProject
                 
                 panel1.Controls.Add(buttons[i]);
             }
+
+            //Draw apple.
+            Button apple = new Button();
+            apple.BackColor = Color.Red;
+            apple.TabStop = false;
+            apple.FlatStyle = FlatStyle.Flat;
+            apple.FlatAppearance.BorderSize = 0;
+            apple.SetBounds(board.block_size * board.apple_x, board.block_size * board.apple_y, board.block_size, board.block_size);
+
+            panel1.Controls.Add(apple);
 
             //Draw score.
             textbox_score.Text = "Segments: " + board.segments.Count();

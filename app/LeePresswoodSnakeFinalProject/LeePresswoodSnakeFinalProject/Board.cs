@@ -32,6 +32,8 @@ namespace LeePresswoodSnakeFinalProject
 
             segments = new List<GameTile>();
             segments.Add(new GameTile(2, 2));
+
+            placeRandomApple();
         }
 
         public void update()
@@ -62,6 +64,14 @@ namespace LeePresswoodSnakeFinalProject
                     segments[0].y += 1;
                     break;
             }
+
+            //Check apple collect.
+            if (segments[0].x == apple_x && segments[0].y == apple_y)
+            {
+                collectApple();
+            }
+
+            //Check death.
         }
 
         public void setDirection(Direction d)
@@ -76,7 +86,11 @@ namespace LeePresswoodSnakeFinalProject
 
         public void collectApple()
         {
+            //Add to the length of the snake.
 
+            
+            //Spawn a new apple.
+            placeRandomApple();
         }
 
         public void placeRandomApple()
@@ -98,6 +112,13 @@ namespace LeePresswoodSnakeFinalProject
                     {
                         is_bad = true;
                     }
+                }
+
+                //Store if the values are good.
+                if (is_bad == false)
+                {
+                    apple_x = a_x;
+                    apple_y = a_y;
                 }
             } while (is_bad);
         }
