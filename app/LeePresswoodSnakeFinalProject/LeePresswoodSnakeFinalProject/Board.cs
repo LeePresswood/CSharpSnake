@@ -21,6 +21,7 @@ namespace LeePresswoodSnakeFinalProject
         //Locations of the snake.
         public List<GameTile> segments;
         public int apple_x, apple_y;
+        public bool just_spawned;
 
         //The direction the snake will move in the next tick.
         private Direction next_direction;
@@ -43,6 +44,8 @@ namespace LeePresswoodSnakeFinalProject
             {
                 for (int i = 1; i < segments.Count(); i++)
                 {
+                    if(i == segments.Count() - 1 && just_spawned)
+
                     segments[i].x = segments[i - 1].x;
                     segments[i].y = segments[i - 1].y;
                 }
@@ -87,7 +90,7 @@ namespace LeePresswoodSnakeFinalProject
         public void collectApple()
         {
             //Add to the length of the snake.
-
+            
             
             //Spawn a new apple.
             placeRandomApple();

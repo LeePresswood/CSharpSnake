@@ -115,7 +115,7 @@ namespace LeePresswoodSnakeFinalProject
             for (int i = 0; i < board.segments.Count(); i++)
             {
                 buttons[i] = new Button();
-                buttons[i].BackColor = Color.Blue;
+                buttons[i].BackColor = Color.Black;
                 buttons[i].TabStop = false;
                 buttons[i].FlatStyle = FlatStyle.Flat;
                 buttons[i].FlatAppearance.BorderSize = 0;
