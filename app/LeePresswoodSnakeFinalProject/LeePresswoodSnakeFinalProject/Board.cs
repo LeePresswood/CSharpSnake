@@ -19,7 +19,7 @@ namespace LeePresswoodSnakeFinalProject
         public int block_size;
 
         //Locations of the snake.
-        public List<Segment> segments;
+        public List<GameTile> segments;
         public int apple_x, apple_y;
 
         //The direction the snake will move in the next tick.
@@ -30,8 +30,8 @@ namespace LeePresswoodSnakeFinalProject
             block_size = width / BLOCKS_ACROSS;
             next_direction = Direction.Right;
 
-            segments = new List<Segment>();
-            segments.Add(new Segment(2, 2));
+            segments = new List<GameTile>();
+            segments.Add(new GameTile(2, 2));
         }
 
         public void update()

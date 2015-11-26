@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LeePresswoodSnakeFinalProject
 {
-    class Segment
+    class GameTile
     {
         public int x, y;
 
-        public Segment(int x, int y)
+        public GameTile(int x, int y)
         {
             this.x = x;
             this.y = y;
