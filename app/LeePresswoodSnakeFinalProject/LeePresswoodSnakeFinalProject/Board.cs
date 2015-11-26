@@ -49,7 +49,7 @@ namespace LeePresswoodSnakeFinalProject
             //For all snake segments behind the head, move.
             if (segments.Count() > 1)
             {
-                for (int i = segments.Count() - 1; i != 1; i--)
+                for (int i = segments.Count() - 1; i != 0; i--)
                 {
                     //if (i == segments.Count() - 1 && just_spawned)
                     {//After eating an apple, the new segment will be added to the list at the location of the tail of the snake. This segment should not move until one update later to show growth.
@@ -96,11 +96,9 @@ namespace LeePresswoodSnakeFinalProject
         {
             //Add to the length of the snake. The new segment should be located on top of the tail of the snake.
             segments.Add(new GameTile(segments.Last().x, segments.Last().y)); 
-            
+            just_spawned = true;
             //foreach(GameTile segment in segments)
             //    Console.WriteLine(segments.IndexOf(segment) + ": " + segment.x + " : " + segment.y);
-            
-            just_spawned = true;
             
             //Spawn a new apple.
             placeRandomApple();
