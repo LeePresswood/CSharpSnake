@@ -22,31 +22,49 @@ namespace LeePresswoodSnakeFinalProject
             timer_game.Enabled = false;
             resumeToolStripMenuItem.Enabled = false;
             pauseGameToolStripMenuItem.Enabled = false;
-
-           panel1.BackColor = Color.Yellow;
-           panel1.TabStop = false;
+            panel1.TabStop = false;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Left)
             {
-                board.setDirection(Direction.Left);
+                //You can only set this direction if not moving in the opposite direction.
+                if (board.getDirection() != Direction.Right)
+                {
+                    board.setDirection(Direction.Left);
+                }
+
                 return true;
             }
             else if (keyData == Keys.Right)
             {
-                board.setDirection(Direction.Right);
+                //You can only set this direction if not moving in the opposite direction.
+                if (board.getDirection() != Direction.Left)
+                {
+                    board.setDirection(Direction.Right);
+                }
+
                 return true;
             }
             else if (keyData == Keys.Up)
             {
-                board.setDirection(Direction.Up);
+                //You can only set this direction if not moving in the opposite direction.
+                if (board.getDirection() != Direction.Down)
+                {
+                    board.setDirection(Direction.Up);
+                }
+
                 return true;
             }
             else if (keyData == Keys.Down)
             {
-                board.setDirection(Direction.Down);
+                //You can only set this direction if not moving in the opposite direction.
+                if (board.getDirection() != Direction.Up)
+                {
+                    board.setDirection(Direction.Down);
+                }
+
                 return true;
             }
 

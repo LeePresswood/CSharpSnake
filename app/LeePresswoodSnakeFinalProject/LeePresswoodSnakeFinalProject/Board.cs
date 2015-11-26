@@ -69,6 +69,11 @@ namespace LeePresswoodSnakeFinalProject
             next_direction = d;
         }
 
+        public Direction getDirection()
+        {
+            return next_direction;
+        }
+
         public bool isDead()
         {
             return false;
