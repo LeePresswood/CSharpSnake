@@ -65,22 +65,22 @@
             // startGameToolStripMenuItem
             // 
             this.startGameToolStripMenuItem.Name = "startGameToolStripMenuItem";
-            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.startGameToolStripMenuItem.Text = "Start";
+            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startGameToolStripMenuItem.Text = "(F1) Start";
             this.startGameToolStripMenuItem.Click += new System.EventHandler(this.startGameToolStripMenuItem_Click);
             // 
             // resumeToolStripMenuItem
             // 
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.resumeToolStripMenuItem.Text = "Resume";
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resumeToolStripMenuItem.Text = "(F2) Resume";
             this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
             // pauseGameToolStripMenuItem
             // 
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
-            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.pauseGameToolStripMenuItem.Text = "Pause";
+            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pauseGameToolStripMenuItem.Text = "(F3) Pause";
             this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // textbox_score

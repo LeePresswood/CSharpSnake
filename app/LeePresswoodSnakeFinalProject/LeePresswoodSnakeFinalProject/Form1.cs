@@ -67,6 +67,10 @@ namespace LeePresswoodSnakeFinalProject
 
                 return true;
             }
+            else if (keyData == Keys.F1)
+            {
+                startGameToolStripMenuItem(this, null);
+            }
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
