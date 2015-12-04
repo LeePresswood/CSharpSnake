@@ -164,6 +164,7 @@ namespace LeePresswoodSnakeFinalProject
                 if (board.isDead())
                 {
                     timer_game.Stop();
+                    textbox_score.Text = "Dead.";
                 }
                 else
                 {

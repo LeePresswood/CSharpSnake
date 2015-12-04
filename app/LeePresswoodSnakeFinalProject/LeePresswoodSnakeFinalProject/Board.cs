@@ -137,7 +137,7 @@ namespace LeePresswoodSnakeFinalProject
             bool border_check = segments.First().x < 0 || segments.First().x >= BLOCKS_ACROSS || segments.First().y < 0 || segments.First().y >= BLOCKS_ACROSS;
             
             bool segment_check = false;
-            for (int i = 1; i < segments.Count(); i++)
+            for (int i = 2; i < segments.Count(); i++)
             {
                 segment_check |= segments.First().x == segments[i].x && segments.First().y == segments[i].y;
             }
