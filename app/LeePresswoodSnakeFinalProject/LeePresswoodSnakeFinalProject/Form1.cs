@@ -69,7 +69,7 @@ namespace LeePresswoodSnakeFinalProject
             }
             else if (keyData == Keys.F1)
             {
-                startGameToolStripMenuItem(this, null);
+                start();
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
@@ -77,6 +77,11 @@ namespace LeePresswoodSnakeFinalProject
 
         private void startGameToolStripMenuItem_Click(object sender, EventArgs e)
         {//Timer should start ticking here. Also, disable the resume game button.
+            start();
+        }
+
+        private void start()
+        {
             timer_game.Enabled = true;
             resumeToolStripMenuItem.Enabled = false;
             pauseGameToolStripMenuItem.Enabled = true;
@@ -85,6 +90,11 @@ namespace LeePresswoodSnakeFinalProject
 
         private void resumeToolStripMenuItem_Click(object sender, EventArgs e)
         {//Timer should start ticking here. Also, disable the resume game button.
+            resume();
+        }
+
+        private void resume()
+        {
             timer_game.Enabled = true;
             resumeToolStripMenuItem.Enabled = false;
             pauseGameToolStripMenuItem.Enabled = true;
@@ -92,6 +102,11 @@ namespace LeePresswoodSnakeFinalProject
 
         private void pauseGameToolStripMenuItem_Click(object sender, EventArgs e)
         {//Timer should stop ticking here. Also, disable the pause game button.
+            pause();
+        }
+
+        private void pause()
+        {
             timer_game.Enabled = false;
             resumeToolStripMenuItem.Enabled = true;
             pauseGameToolStripMenuItem.Enabled = false;
