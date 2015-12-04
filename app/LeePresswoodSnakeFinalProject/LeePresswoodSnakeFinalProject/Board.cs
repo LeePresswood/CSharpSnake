@@ -15,7 +15,7 @@ namespace LeePresswoodSnakeFinalProject
     class Board
     {
         //Size of blocks.
-        private const int BLOCKS_ACROSS = 30;
+        public const int BLOCKS_ACROSS = 30;
         public int block_size;
 
         //Locations of the snake.

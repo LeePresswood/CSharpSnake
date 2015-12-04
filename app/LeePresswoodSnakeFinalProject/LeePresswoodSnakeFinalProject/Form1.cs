@@ -13,6 +13,7 @@ namespace LeePresswoodSnakeFinalProject
     public partial class form_game : Form
     {
         private Board board;
+        private Button[] buttons;
 
         public form_game()
         {
@@ -98,6 +99,25 @@ namespace LeePresswoodSnakeFinalProject
                 resumeToolStripMenuItem.Enabled = false;
                 pauseGameToolStripMenuItem.Enabled = true;
                 board = new Board(panel1.Width);
+
+                //Upon creating the board, we want to create a grid of buttons.
+                buttons = new Button[Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS];
+                for (int i = 0; i < Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS; i++)
+                {
+                    buttons[i] = new Button();
+                    buttons[i].Visible = false;
+                    buttons[i].TabStop = false;
+                    buttons[i].BackColor = Color.White;
+                    buttons[i].FlatStyle = FlatStyle.Flat;
+                    buttons[i].FlatAppearance.BorderSize = 0;
+
+                    //Setting the bounds will depend upon the location in the array.
+                    int x = (i % Board.BLOCKS_ACROSS) * board.block_size;
+                    int y = (i / Board.BLOCKS_ACROSS) * board.block_size;
+                    buttons[i].SetBounds(x, y, board.block_size, board.block_size);
+
+                    panel1.Controls.Add(buttons[i]);
+                }
             }
         }
 
@@ -148,38 +168,29 @@ namespace LeePresswoodSnakeFinalProject
 
         private void draw()
         {//Draw the board according to the current state.
-            //Remove old buttons
-            while (panel1.Controls.Count > 0)
+            //Make all buttons invisible.
+            for (int i = 0; i < Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS; i++)
             {
-                panel1.Controls.Clear();
+                buttons[i].Visible = false;
+                buttons[i].BackColor = Color.White;
             }
 
-            //Draw board
-            Button[] buttons = new Button[board.segments.Count()];
+            //Draw board by turning on buttons where they exist.
             for (int i = 0; i < board.segments.Count(); i++)
             {
-                buttons[i] = new Button();
-                buttons[i].BackColor = Color.Black;
-                buttons[i].TabStop = false;
-                buttons[i].FlatStyle = FlatStyle.Flat;
-                buttons[i].FlatAppearance.BorderSize = 0;
-                buttons[i].SetBounds(board.block_size * board.segments[i].x, board.block_size * board.segments[i].y, board.block_size, board.block_size);
-                
-                panel1.Controls.Add(buttons[i]);
+                int coordinate_segment = board.segments[i].y * Board.BLOCKS_ACROSS + board.segments[i].x;
+                buttons[coordinate_segment].BackColor = Color.Black;
             }
 
             //Draw apple.
-            Button apple = new Button();
-            apple.BackColor = Color.Red;
-            apple.TabStop = false;
-            apple.FlatStyle = FlatStyle.Flat;
-            apple.FlatAppearance.BorderSize = 0;
-            apple.SetBounds(board.block_size * board.apple_x, board.block_size * board.apple_y, board.block_size, board.block_size);
-
-            panel1.Controls.Add(apple);
+            int coordinate_apple = board.apple_y * Board.BLOCKS_ACROSS + board.apple_x;
+            buttons[coordinate_apple].BackColor = Color.Red;
 
             //Draw score.
-            textbox_score.Text = "Segments: " + board.segments.Count();
+            if(!textbox_score.Text.Equals("Segments: " + board.segments.Count()))
+            {
+                textbox_score.Text = "Segments: " + board.segments.Count();
+            }
         }
     }
 }
