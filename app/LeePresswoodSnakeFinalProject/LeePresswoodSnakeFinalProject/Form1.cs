@@ -19,6 +19,10 @@ namespace LeePresswoodSnakeFinalProject
         {
             InitializeComponent();
 
+            startGameToolStripMenuItem.ShortcutKeys = Keys.F1;
+            pauseGameToolStripMenuItem.ShortcutKeys = Keys.F2;
+            resumeToolStripMenuItem.ShortcutKeys = Keys.F3;
+
             //Timer and pause button should both be disabled upon creating the form.
             timer_game.Enabled = false;
             resumeToolStripMenuItem.Enabled = false;

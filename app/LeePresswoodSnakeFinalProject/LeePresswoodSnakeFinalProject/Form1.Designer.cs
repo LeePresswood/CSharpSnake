@@ -64,8 +64,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startGameToolStripMenuItem,
-            this.resumeToolStripMenuItem,
-            this.pauseGameToolStripMenuItem});
+            this.pauseGameToolStripMenuItem,
+            this.resumeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 23);
             this.fileToolStripMenuItem.Text = "File";
@@ -74,7 +74,7 @@
             // startGameToolStripMenuItem
             // 
             this.startGameToolStripMenuItem.Name = "startGameToolStripMenuItem";
-            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.startGameToolStripMenuItem.Text = "(F1) Start";
             this.startGameToolStripMenuItem.Click += new System.EventHandler(this.startGameToolStripMenuItem_Click);
             // 
