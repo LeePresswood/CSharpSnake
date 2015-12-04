@@ -75,21 +75,21 @@
             // 
             this.startGameToolStripMenuItem.Name = "startGameToolStripMenuItem";
             this.startGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.startGameToolStripMenuItem.Text = "(F1) Start";
+            this.startGameToolStripMenuItem.Text = "Start";
             this.startGameToolStripMenuItem.Click += new System.EventHandler(this.startGameToolStripMenuItem_Click);
             // 
             // resumeToolStripMenuItem
             // 
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.resumeToolStripMenuItem.Text = "(F2) Resume";
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resumeToolStripMenuItem.Text = "Resume";
             this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
             // pauseGameToolStripMenuItem
             // 
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
-            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.pauseGameToolStripMenuItem.Text = "(F3) Pause";
+            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pauseGameToolStripMenuItem.Text = "Pause";
             this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // textbox_score
@@ -98,7 +98,7 @@
             this.textbox_score.Enabled = false;
             this.textbox_score.Name = "textbox_score";
             this.textbox_score.ReadOnly = true;
-            this.textbox_score.Size = new System.Drawing.Size(100, 23);
+            this.textbox_score.Size = new System.Drawing.Size(193, 23);
             this.textbox_score.Text = "Segments: ";
             // 
             // timer_game
