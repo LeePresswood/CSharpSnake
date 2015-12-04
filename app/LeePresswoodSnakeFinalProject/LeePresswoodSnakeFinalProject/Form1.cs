@@ -212,22 +212,22 @@ namespace LeePresswoodSnakeFinalProject
             pause();
         }
 
-        private void easyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void easyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             changeDifficulty(125);
         }
 
-        private void mediumToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mediumToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             changeDifficulty(75);
         }
 
-        private void hardToolStripMenuItem_Click(object sender, EventArgs e)
+        private void hardToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             changeDifficulty(40);
         }
 
-        private void impossibleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void impossibleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             changeDifficulty(15);
         }
