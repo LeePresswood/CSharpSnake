@@ -97,8 +97,6 @@ namespace LeePresswoodSnakeFinalProject
             //Add to the length of the snake. The new segment should be located on top of the tail of the snake.
             segments.Add(new GameTile(segments.Last().x, segments.Last().y)); 
             just_spawned = true;
-            //foreach(GameTile segment in segments)
-            //    Console.WriteLine(segments.IndexOf(segment) + ": " + segment.x + " : " + segment.y);
             
             //Spawn a new apple.
             placeRandomApple();
@@ -107,13 +105,14 @@ namespace LeePresswoodSnakeFinalProject
         public void placeRandomApple()
         {//Place an apple on the board. The apple is guaranteed to not be located on top of the snake.
             bool is_bad;
+            Random randomizer = new Random();
             do
             {
                 is_bad = false;
 
                 //Get an X and Y.
-                int a_x = new Random().Next(BLOCKS_ACROSS);
-                int a_y = new Random().Next(BLOCKS_ACROSS);
+                int a_x = randomizer.Next(BLOCKS_ACROSS);
+                int a_y = randomizer.Next(BLOCKS_ACROSS);
 
                 //Check.
                 foreach (GameTile segment in segments)

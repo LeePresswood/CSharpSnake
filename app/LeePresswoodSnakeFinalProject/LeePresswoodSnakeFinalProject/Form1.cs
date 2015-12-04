@@ -100,6 +100,9 @@ namespace LeePresswoodSnakeFinalProject
                 pauseGameToolStripMenuItem.Enabled = true;
                 board = new Board(panel1.Width);
 
+                //Pressing start again after the first time the game is started will lead to multiple games being on the screen. Clear these.
+                panel1.Controls.Clear();
+
                 //Upon creating the board, we want to create a grid of buttons.
                 buttons = new Button[Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS];
                 for (int i = 0; i < Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS; i++)
