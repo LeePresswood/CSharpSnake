@@ -202,14 +202,40 @@ namespace LeePresswoodSnakeFinalProject
             }
         }
 
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pause();
+        }
+
         private void speedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pause();
         }
 
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void easyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pause();
+            changeDifficulty(125);
+        }
+
+        private void mediumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            changeDifficulty(75);
+        }
+
+        private void hardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            changeDifficulty(40);
+        }
+
+        private void impossibleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            changeDifficulty(15);
+        }
+
+        private void changeDifficulty(int speed)
+        {
+            timer_game.Interval = speed;
+            start();
         }
     }
 }

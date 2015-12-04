@@ -40,6 +40,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.speedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mediumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impossibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,10 +114,13 @@
             // speedToolStripMenuItem
             // 
             this.speedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.easyToolStripMenuItem});
+            this.easyToolStripMenuItem,
+            this.mediumToolStripMenuItem,
+            this.hardToolStripMenuItem,
+            this.impossibleToolStripMenuItem});
             this.speedToolStripMenuItem.Name = "speedToolStripMenuItem";
-            this.speedToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
-            this.speedToolStripMenuItem.Text = "Speed";
+            this.speedToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
+            this.speedToolStripMenuItem.Text = "Difficulty";
             this.speedToolStripMenuItem.Click += new System.EventHandler(this.speedToolStripMenuItem_Click);
             // 
             // easyToolStripMenuItem
@@ -122,6 +128,28 @@
             this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
             this.easyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.easyToolStripMenuItem.Text = "Easy";
+            this.easyToolStripMenuItem.Click += new System.EventHandler(this.easyToolStripMenuItem_Click);
+            // 
+            // mediumToolStripMenuItem
+            // 
+            this.mediumToolStripMenuItem.Name = "mediumToolStripMenuItem";
+            this.mediumToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mediumToolStripMenuItem.Text = "Medium";
+            this.mediumToolStripMenuItem.Click += new System.EventHandler(this.mediumToolStripMenuItem_Click);
+            // 
+            // hardToolStripMenuItem
+            // 
+            this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
+            this.hardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hardToolStripMenuItem.Text = "Hard";
+            this.hardToolStripMenuItem.Click += new System.EventHandler(this.hardToolStripMenuItem_Click);
+            // 
+            // impossibleToolStripMenuItem
+            // 
+            this.impossibleToolStripMenuItem.Name = "impossibleToolStripMenuItem";
+            this.impossibleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.impossibleToolStripMenuItem.Text = "Impossible";
+            this.impossibleToolStripMenuItem.Click += new System.EventHandler(this.impossibleToolStripMenuItem_Click);
             // 
             // form_game
             // 
@@ -157,6 +185,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem speedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mediumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem impossibleToolStripMenuItem;
     }
 }
 
