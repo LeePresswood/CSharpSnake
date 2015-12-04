@@ -38,6 +38,8 @@
             this.timer_game = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.speedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.textbox_score});
+            this.textbox_score,
+            this.speedToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(301, 27);
@@ -61,31 +64,33 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 23);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // startGameToolStripMenuItem
             // 
             this.startGameToolStripMenuItem.Name = "startGameToolStripMenuItem";
-            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.startGameToolStripMenuItem.Text = "(F1) Start";
             this.startGameToolStripMenuItem.Click += new System.EventHandler(this.startGameToolStripMenuItem_Click);
             // 
             // resumeToolStripMenuItem
             // 
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.resumeToolStripMenuItem.Text = "(F2) Resume";
             this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
             // pauseGameToolStripMenuItem
             // 
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
-            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.pauseGameToolStripMenuItem.Text = "(F3) Pause";
             this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // textbox_score
             // 
             this.textbox_score.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.textbox_score.Enabled = false;
             this.textbox_score.Name = "textbox_score";
             this.textbox_score.ReadOnly = true;
             this.textbox_score.Size = new System.Drawing.Size(100, 23);
@@ -102,6 +107,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 300);
             this.panel1.TabIndex = 1;
+            // 
+            // speedToolStripMenuItem
+            // 
+            this.speedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.easyToolStripMenuItem});
+            this.speedToolStripMenuItem.Name = "speedToolStripMenuItem";
+            this.speedToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.speedToolStripMenuItem.Text = "Speed";
+            this.speedToolStripMenuItem.Click += new System.EventHandler(this.speedToolStripMenuItem_Click);
+            // 
+            // easyToolStripMenuItem
+            // 
+            this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
+            this.easyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.easyToolStripMenuItem.Text = "Easy";
             // 
             // form_game
             // 
@@ -135,6 +155,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripTextBox textbox_score;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem speedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
     }
 }
 

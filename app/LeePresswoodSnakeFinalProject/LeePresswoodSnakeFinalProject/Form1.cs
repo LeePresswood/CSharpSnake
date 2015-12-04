@@ -201,5 +201,15 @@ namespace LeePresswoodSnakeFinalProject
                 textbox_score.Text = "Segments: " + board.segments.Count();
             }
         }
+
+        private void speedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pause();
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pause();
+        }
     }
 }
