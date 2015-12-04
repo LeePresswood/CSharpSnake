@@ -175,16 +175,18 @@ namespace LeePresswoodSnakeFinalProject
                 buttons[i].BackColor = Color.White;
             }
 
+            //Draw apple.
+            int coordinate_apple = board.apple_y * Board.BLOCKS_ACROSS + board.apple_x;
+            buttons[coordinate_apple].BackColor = Color.Red;
+            buttons[coordinate_apple].Visible = true;
+
             //Draw board by turning on buttons where they exist.
             for (int i = 0; i < board.segments.Count(); i++)
             {
                 int coordinate_segment = board.segments[i].y * Board.BLOCKS_ACROSS + board.segments[i].x;
                 buttons[coordinate_segment].BackColor = Color.Black;
+                buttons[coordinate_segment].Visible = true;
             }
-
-            //Draw apple.
-            int coordinate_apple = board.apple_y * Board.BLOCKS_ACROSS + board.apple_x;
-            buttons[coordinate_apple].BackColor = Color.Red;
 
             //Draw score.
             if(!textbox_score.Text.Equals("Segments: " + board.segments.Count()))
