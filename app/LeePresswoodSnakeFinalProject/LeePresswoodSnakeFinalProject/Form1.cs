@@ -67,9 +67,19 @@ namespace LeePresswoodSnakeFinalProject
 
                 return true;
             }
+
+            //Control keys.
             else if (keyData == Keys.F1)
             {
                 start();
+            }
+            else if (keyData == Keys.F2)
+            {
+                pause();
+            }
+            else if (keyData == Keys.F3)
+            {
+                resume();
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
@@ -82,10 +92,13 @@ namespace LeePresswoodSnakeFinalProject
 
         private void start()
         {
-            timer_game.Enabled = true;
-            resumeToolStripMenuItem.Enabled = false;
-            pauseGameToolStripMenuItem.Enabled = true;
-            board = new Board(panel1.Width);
+            if (startGameToolStripMenuItem.Enabled)
+            {
+                timer_game.Enabled = true;
+                resumeToolStripMenuItem.Enabled = false;
+                pauseGameToolStripMenuItem.Enabled = true;
+                board = new Board(panel1.Width);
+            }
         }
 
         private void resumeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,9 +108,12 @@ namespace LeePresswoodSnakeFinalProject
 
         private void resume()
         {
-            timer_game.Enabled = true;
-            resumeToolStripMenuItem.Enabled = false;
-            pauseGameToolStripMenuItem.Enabled = true;
+            if (resumeToolStripMenuItem.Enabled)
+            {
+                timer_game.Enabled = true;
+                resumeToolStripMenuItem.Enabled = false;
+                pauseGameToolStripMenuItem.Enabled = true;
+            }
         }
 
         private void pauseGameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,9 +123,12 @@ namespace LeePresswoodSnakeFinalProject
 
         private void pause()
         {
-            timer_game.Enabled = false;
-            resumeToolStripMenuItem.Enabled = true;
-            pauseGameToolStripMenuItem.Enabled = false;
+            if (pauseGameToolStripMenuItem.Enabled)
+            {
+                timer_game.Enabled = false;
+                resumeToolStripMenuItem.Enabled = true;
+                pauseGameToolStripMenuItem.Enabled = false;
+            }
         }
 
         private void timer_game_Tick(object sender, EventArgs e)
