@@ -98,7 +98,7 @@ namespace LeePresswoodSnakeFinalProject
                 timer_game.Enabled = true;
                 resumeToolStripMenuItem.Enabled = false;
                 pauseGameToolStripMenuItem.Enabled = true;
-                board = new Board(panel1.Width);
+                board = new Board(panel1.Width, useSpecialApplesToolStripMenuItem.Checked);
 
                 //Pressing start again after the first time the game is started will lead to multiple games being on the screen. Clear these.
                 panel1.Controls.Clear();
@@ -214,27 +214,53 @@ namespace LeePresswoodSnakeFinalProject
 
         private void easyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            easyToolStripMenuItem1.Checked = true;
+            mediumToolStripMenuItem1.Checked = false;
+            hardToolStripMenuItem1.Checked = false;
+            impossibleToolStripMenuItem1.Checked = false;
+
             changeDifficulty(125);
         }
 
         private void mediumToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            easyToolStripMenuItem1.Checked = false;
+            mediumToolStripMenuItem1.Checked = true;
+            hardToolStripMenuItem1.Checked = false;
+            impossibleToolStripMenuItem1.Checked = false;
+
             changeDifficulty(75);
         }
 
         private void hardToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            easyToolStripMenuItem1.Checked = false;
+            mediumToolStripMenuItem1.Checked = false;
+            hardToolStripMenuItem1.Checked = true;
+            impossibleToolStripMenuItem1.Checked = false;
+
             changeDifficulty(40);
         }
 
         private void impossibleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            easyToolStripMenuItem1.Checked = false;
+            mediumToolStripMenuItem1.Checked = false;
+            hardToolStripMenuItem1.Checked = false;
+            impossibleToolStripMenuItem1.Checked = true;
+
             changeDifficulty(15);
         }
 
         private void changeDifficulty(int speed)
         {
             timer_game.Interval = speed;
+            start();
+        }
+
+        private void useSpecialApplesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            useSpecialApplesToolStripMenuItem.Checked = !useSpecialApplesToolStripMenuItem.Checked;
             start();
         }
     }

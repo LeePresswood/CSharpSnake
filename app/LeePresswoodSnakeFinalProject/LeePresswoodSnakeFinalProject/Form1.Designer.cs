@@ -128,6 +128,7 @@
             this.useSpecialApplesToolStripMenuItem.Name = "useSpecialApplesToolStripMenuItem";
             this.useSpecialApplesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.useSpecialApplesToolStripMenuItem.Text = "Use Special Apples";
+            this.useSpecialApplesToolStripMenuItem.Click += new System.EventHandler(this.useSpecialApplesToolStripMenuItem_Click);
             // 
             // difficultyToolStripMenuItem
             // 

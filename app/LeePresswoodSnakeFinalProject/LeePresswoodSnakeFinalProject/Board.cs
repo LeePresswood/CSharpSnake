@@ -27,7 +27,7 @@ namespace LeePresswoodSnakeFinalProject
         private Direction next_direction;
         private Direction last_direction;
 
-        public Board(int width)
+        public Board(int width, bool use_special_apples)
         {
             block_size = width / BLOCKS_ACROSS;
             next_direction = Direction.Right;
@@ -36,6 +36,10 @@ namespace LeePresswoodSnakeFinalProject
             segments.Add(new GameTile(2, 2));
 
             placeRandomApple();
+            if (use_special_apples)
+            {
+                placeRandomSpecialApple();
+            }
         }
 
         public void update()
@@ -130,6 +134,11 @@ namespace LeePresswoodSnakeFinalProject
                     apple_y = a_y;
                 }
             } while (is_bad);
+        }
+
+        private void placeRandomSpecialApple()
+        {
+
         }
 
         public bool isDead()
