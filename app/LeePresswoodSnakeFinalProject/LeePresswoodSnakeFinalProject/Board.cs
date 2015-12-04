@@ -40,12 +40,6 @@ namespace LeePresswoodSnakeFinalProject
 
         public void update()
         {//Game tick happened, so move the snake forward according to the next_direction variable.
-            //Check apple collect.
-            if (segments[0].x == apple_x && segments[0].y == apple_y)
-            {
-                collectApple();
-            }
-
             //For all snake segments behind the head, move.
             if (segments.Count() > 1)
             {
@@ -80,6 +74,12 @@ namespace LeePresswoodSnakeFinalProject
                     break;
             }
             last_direction = next_direction;
+
+            //Check apple collect.
+            if (segments[0].x == apple_x && segments[0].y == apple_y)
+            {
+                collectApple();
+            }
         }
 
         public void setDirection(Direction d)
@@ -105,7 +105,7 @@ namespace LeePresswoodSnakeFinalProject
         public void placeRandomApple()
         {//Place an apple on the board. The apple is guaranteed to not be located on top of the snake.
             bool is_bad;
-            Random randomizer = new Random();
+            Random randomizer = new Random(DateTime.Now.Millisecond);
             do
             {
                 is_bad = false;
