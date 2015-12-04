@@ -159,12 +159,15 @@ namespace LeePresswoodSnakeFinalProject
             if (!board.isDead())
             {//Update the board and draw it.
                 board.update();
-                draw();
-
-                //Check death. Stop timer if dead.
+                
+                //Check death. Stop timer if dead. Draw otherwise.
                 if (board.isDead())
                 {
                     timer_game.Stop();
+                }
+                else
+                {
+                    draw();
                 }
             }
         }
