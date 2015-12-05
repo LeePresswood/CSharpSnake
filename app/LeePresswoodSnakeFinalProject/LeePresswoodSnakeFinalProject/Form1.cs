@@ -102,7 +102,7 @@ namespace LeePresswoodSnakeFinalProject
                 timer_game.Enabled = true;
                 resumeToolStripMenuItem.Enabled = false;
                 pauseGameToolStripMenuItem.Enabled = true;
-                board = new Board(panel1.Width, useSpecialApplesToolStripMenuItem.Checked);
+                board = new Board(panel1.Width);
 
                 //Pressing start again after the first time the game is started will lead to multiple games being on the screen. Clear these.
                 panel1.Controls.Clear();
@@ -168,7 +168,7 @@ namespace LeePresswoodSnakeFinalProject
                 if (board.isDead())
                 {
                     timer_game.Stop();
-                    textbox_score.Text = "Dead. Segments: " + board.segments.Count();
+                    textbox_score.Text = "Dead with " + board.segments.Count() + " Segments";
                 }
                 else
                 {
