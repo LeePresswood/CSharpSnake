@@ -52,7 +52,7 @@ namespace LeePresswoodSnakeFinalProject
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == Keys.Left)
+            if (keyData == Keys.Left && timer_game.Enabled)
             {
                 //You can only set this direction if not moving in the opposite direction.
                 if (board.getLastDirection() != Direction.Right)
@@ -62,7 +62,7 @@ namespace LeePresswoodSnakeFinalProject
 
                 return true;
             }
-            else if (keyData == Keys.Right)
+            else if (keyData == Keys.Right && timer_game.Enabled)
             {
                 //You can only set this direction if not moving in the opposite direction.
                 if (board.getLastDirection() != Direction.Left)
@@ -72,7 +72,7 @@ namespace LeePresswoodSnakeFinalProject
 
                 return true;
             }
-            else if (keyData == Keys.Up)
+            else if (keyData == Keys.Up && timer_game.Enabled)
             {
                 //You can only set this direction if not moving in the opposite direction.
                 if (board.getLastDirection() != Direction.Down)
@@ -82,7 +82,7 @@ namespace LeePresswoodSnakeFinalProject
 
                 return true;
             }
-            else if (keyData == Keys.Down)
+            else if (keyData == Keys.Down && timer_game.Enabled)
             {
                 //You can only set this direction if not moving in the opposite direction.
                 if (board.getLastDirection() != Direction.Up)
