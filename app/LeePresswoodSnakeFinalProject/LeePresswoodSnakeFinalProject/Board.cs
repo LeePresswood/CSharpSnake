@@ -33,6 +33,7 @@ namespace LeePresswoodSnakeFinalProject
             block_size = width / BLOCKS_ACROSS;
             next_direction = Direction.Right;
 
+            old_tail = new GameTile(0, 0);
             segments = new List<GameTile>();
             segments.Add(new GameTile(2, 2));
 
@@ -42,7 +43,8 @@ namespace LeePresswoodSnakeFinalProject
         public void update()
         {//Game tick happened, so move the snake forward according to the next_direction variable.
             //Store the old locations of the snake.
-            old_tail = new GameTile(segments.Last().x, segments.Last().y);
+            old_tail.x = segments.Last().x;
+            old_tail.y = segments.Last().y;
             
             //For all snake segments behind the head, move.
             if (segments.Count() > 1)
