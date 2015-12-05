@@ -19,6 +19,26 @@ namespace LeePresswoodSnakeFinalProject
         {
             InitializeComponent();
 
+            //Upon creating the form, we want to create a grid of buttons.
+            buttons = new Button[Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS];
+            for (int i = 0; i < Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS; i++)
+            {
+                buttons[i] = new Button();
+                buttons[i].Visible = true;
+                buttons[i].TabStop = false;
+                buttons[i].BackColor = Color.White;
+                buttons[i].FlatStyle = FlatStyle.Flat;
+                buttons[i].FlatAppearance.BorderSize = 0;
+
+                //Setting the bounds will depend upon the location in the array.
+                int block_size = panel1.Width / Board.BLOCKS_ACROSS;
+                int x = (i % Board.BLOCKS_ACROSS) * block_size;
+                int y = (i / Board.BLOCKS_ACROSS) * block_size;
+                buttons[i].SetBounds(x, y, block_size, block_size);
+
+                panel1.Controls.Add(buttons[i]);
+            }
+
             startGameToolStripMenuItem.ShortcutKeys = Keys.F1;
             pauseGameToolStripMenuItem.ShortcutKeys = Keys.F2;
             resumeToolStripMenuItem.ShortcutKeys = Keys.F3;
@@ -102,28 +122,12 @@ namespace LeePresswoodSnakeFinalProject
                 timer_game.Enabled = true;
                 resumeToolStripMenuItem.Enabled = false;
                 pauseGameToolStripMenuItem.Enabled = true;
-                board = new Board(panel1.Width);
+                board = new Board();
 
-                //Pressing start again after the first time the game is started will lead to multiple games being on the screen. Clear these.
-                panel1.Controls.Clear();
-
-                //Upon creating the board, we want to create a grid of buttons.
-                buttons = new Button[Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS];
+                //Clear all buttons of color at the beginning to assure repeated playings don't overlap.
                 for (int i = 0; i < Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS; i++)
                 {
-                    buttons[i] = new Button();
-                    buttons[i].Visible = true;
-                    buttons[i].TabStop = false;
                     buttons[i].BackColor = Color.White;
-                    buttons[i].FlatStyle = FlatStyle.Flat;
-                    buttons[i].FlatAppearance.BorderSize = 0;
-
-                    //Setting the bounds will depend upon the location in the array.
-                    int x = (i % Board.BLOCKS_ACROSS) * board.block_size;
-                    int y = (i / Board.BLOCKS_ACROSS) * board.block_size;
-                    buttons[i].SetBounds(x, y, board.block_size, board.block_size);
-
-                    panel1.Controls.Add(buttons[i]);
                 }
             }
         }
@@ -179,12 +183,6 @@ namespace LeePresswoodSnakeFinalProject
 
         private void draw()
         {//Draw the board according to the current state.
-            //Make all old segments invisible.
-            /*foreach (GameTile old_segment in board.old_segments)
-            {
-                int coordinate_old_segment = old_segment.y * Board.BLOCKS_ACROSS + old_segment.x;
-                buttons[coordinate_old_segment].BackColor = Color.White;
-            }*/
             //Hide the tail.
             int coordinate_segment = board.old_tail.y * Board.BLOCKS_ACROSS + board.old_tail.x;
             buttons[coordinate_segment].BackColor = Color.White;

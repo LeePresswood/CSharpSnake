@@ -16,7 +16,6 @@ namespace LeePresswoodSnakeFinalProject
     {
         //Size of blocks.
         public const int BLOCKS_ACROSS = 30;
-        public int block_size;
 
         //Locations of the snake.
         public List<GameTile> segments;
@@ -28,9 +27,8 @@ namespace LeePresswoodSnakeFinalProject
         private Direction next_direction;
         private Direction last_direction;
 
-        public Board(int width)
+        public Board()
         {
-            block_size = width / BLOCKS_ACROSS;
             next_direction = Direction.Right;
 
             old_tail = new GameTile(0, 0);
