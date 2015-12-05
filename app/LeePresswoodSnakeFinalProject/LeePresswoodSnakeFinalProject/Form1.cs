@@ -180,11 +180,14 @@ namespace LeePresswoodSnakeFinalProject
         private void draw()
         {//Draw the board according to the current state.
             //Make all old segments invisible.
-            foreach (GameTile old_segment in board.old_segments)
+            /*foreach (GameTile old_segment in board.old_segments)
             {
                 int coordinate_old_segment = old_segment.y * Board.BLOCKS_ACROSS + old_segment.x;
                 buttons[coordinate_old_segment].BackColor = Color.White;
-            }
+            }*/
+            //Hide the tail.
+            int coordinate_segment = board.old_tail.y * Board.BLOCKS_ACROSS + board.old_tail.x;
+            buttons[coordinate_segment].BackColor = Color.White;
 
             //Draw apple.
             int coordinate_apple = board.apple_y * Board.BLOCKS_ACROSS + board.apple_x;
@@ -193,7 +196,7 @@ namespace LeePresswoodSnakeFinalProject
             //Draw board by turning on buttons where they exist.
             for (int i = 0; i < board.segments.Count(); i++)
             {
-                int coordinate_segment = board.segments[i].y * Board.BLOCKS_ACROSS + board.segments[i].x;
+                coordinate_segment = board.segments[i].y * Board.BLOCKS_ACROSS + board.segments[i].x;
                 buttons[coordinate_segment].BackColor = Color.Black;
             }
 
