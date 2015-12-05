@@ -32,19 +32,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textbox_score = new System.Windows.Forms.ToolStripTextBox();
-            this.timer_game = new System.Windows.Forms.Timer(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.speedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.useSpecialApplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.difficultyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.easyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mediumToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.impossibleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer_game = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,23 +73,23 @@
             // startGameToolStripMenuItem
             // 
             this.startGameToolStripMenuItem.Name = "startGameToolStripMenuItem";
-            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.startGameToolStripMenuItem.Text = "Start";
             this.startGameToolStripMenuItem.Click += new System.EventHandler(this.startGameToolStripMenuItem_Click);
-            // 
-            // resumeToolStripMenuItem
-            // 
-            this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.resumeToolStripMenuItem.Text = "Resume";
-            this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
             // pauseGameToolStripMenuItem
             // 
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
-            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.pauseGameToolStripMenuItem.Text = "Pause";
             this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
+            // 
+            // resumeToolStripMenuItem
+            // 
+            this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.resumeToolStripMenuItem.Text = "Resume";
+            this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
             // 
             // textbox_score
             // 
@@ -101,34 +100,14 @@
             this.textbox_score.Size = new System.Drawing.Size(193, 23);
             this.textbox_score.Text = "Segments: ";
             // 
-            // timer_game
-            // 
-            this.timer_game.Interval = 75;
-            this.timer_game.Tick += new System.EventHandler(this.timer_game_Tick);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(0, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 300);
-            this.panel1.TabIndex = 1;
-            // 
             // speedToolStripMenuItem
             // 
             this.speedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.difficultyToolStripMenuItem,
-            this.useSpecialApplesToolStripMenuItem});
+            this.difficultyToolStripMenuItem});
             this.speedToolStripMenuItem.Name = "speedToolStripMenuItem";
             this.speedToolStripMenuItem.Size = new System.Drawing.Size(61, 23);
             this.speedToolStripMenuItem.Text = "Settings";
             this.speedToolStripMenuItem.Click += new System.EventHandler(this.speedToolStripMenuItem_Click);
-            // 
-            // useSpecialApplesToolStripMenuItem
-            // 
-            this.useSpecialApplesToolStripMenuItem.Name = "useSpecialApplesToolStripMenuItem";
-            this.useSpecialApplesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.useSpecialApplesToolStripMenuItem.Text = "Use Special Apples";
-            this.useSpecialApplesToolStripMenuItem.Click += new System.EventHandler(this.useSpecialApplesToolStripMenuItem_Click);
             // 
             // difficultyToolStripMenuItem
             // 
@@ -138,7 +117,7 @@
             this.hardToolStripMenuItem1,
             this.impossibleToolStripMenuItem1});
             this.difficultyToolStripMenuItem.Name = "difficultyToolStripMenuItem";
-            this.difficultyToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.difficultyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.difficultyToolStripMenuItem.Text = "Difficulty";
             // 
             // easyToolStripMenuItem1
@@ -170,6 +149,18 @@
             this.impossibleToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.impossibleToolStripMenuItem1.Text = "Impossible";
             this.impossibleToolStripMenuItem1.Click += new System.EventHandler(this.impossibleToolStripMenuItem1_Click);
+            // 
+            // timer_game
+            // 
+            this.timer_game.Interval = 75;
+            this.timer_game.Tick += new System.EventHandler(this.timer_game_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 300);
+            this.panel1.TabIndex = 1;
             // 
             // form_game
             // 
@@ -204,7 +195,6 @@
         private System.Windows.Forms.ToolStripTextBox textbox_score;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem speedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem useSpecialApplesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem difficultyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mediumToolStripMenuItem1;

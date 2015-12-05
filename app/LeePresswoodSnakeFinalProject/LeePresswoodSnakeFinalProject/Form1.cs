@@ -112,7 +112,7 @@ namespace LeePresswoodSnakeFinalProject
                 for (int i = 0; i < Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS; i++)
                 {
                     buttons[i] = new Button();
-                    buttons[i].Visible = false;
+                    buttons[i].Visible = true;
                     buttons[i].TabStop = false;
                     buttons[i].BackColor = Color.White;
                     buttons[i].FlatStyle = FlatStyle.Flat;
@@ -168,7 +168,7 @@ namespace LeePresswoodSnakeFinalProject
                 if (board.isDead())
                 {
                     timer_game.Stop();
-                    textbox_score.Text = "Dead with " + board.segments.Count() + " Segments";
+                    textbox_score.Text = "Died with " + board.segments.Count() + " Segments";
                 }
                 else
                 {
@@ -179,24 +179,25 @@ namespace LeePresswoodSnakeFinalProject
 
         private void draw()
         {//Draw the board according to the current state.
-            //Make all buttons invisible.
-            for (int i = 0; i < Board.BLOCKS_ACROSS * Board.BLOCKS_ACROSS; i++)
+            //Make all old segments invisible.
+            foreach (GameTile old_segment in board.old_segments)
             {
-                buttons[i].Visible = false;
-                buttons[i].BackColor = Color.White;
+                int coordinate_old_segment = old_segment.y * Board.BLOCKS_ACROSS + old_segment.x;
+                //buttons[coordinate_old_segment].Visible = false;
+                buttons[coordinate_old_segment].BackColor = Color.White;
             }
 
             //Draw apple.
             int coordinate_apple = board.apple_y * Board.BLOCKS_ACROSS + board.apple_x;
             buttons[coordinate_apple].BackColor = Color.Red;
-            buttons[coordinate_apple].Visible = true;
+            //buttons[coordinate_apple].Visible = true;
 
             //Draw board by turning on buttons where they exist.
             for (int i = 0; i < board.segments.Count(); i++)
             {
                 int coordinate_segment = board.segments[i].y * Board.BLOCKS_ACROSS + board.segments[i].x;
                 buttons[coordinate_segment].BackColor = Color.Black;
-                buttons[coordinate_segment].Visible = true;
+                //buttons[coordinate_segment].Visible = true;
             }
 
             //Draw score.
@@ -253,18 +254,12 @@ namespace LeePresswoodSnakeFinalProject
             hardToolStripMenuItem1.Checked = false;
             impossibleToolStripMenuItem1.Checked = true;
 
-            changeDifficulty(15);
+            changeDifficulty(20);
         }
 
         private void changeDifficulty(int speed)
         {
             timer_game.Interval = speed;
-            start();
-        }
-
-        private void useSpecialApplesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            useSpecialApplesToolStripMenuItem.Checked = !useSpecialApplesToolStripMenuItem.Checked;
             start();
         }
     }

@@ -20,6 +20,7 @@ namespace LeePresswoodSnakeFinalProject
 
         //Locations of the snake.
         public List<GameTile> segments;
+        public List<GameTile> old_segments;
         public int apple_x, apple_y;
         public bool just_spawned;
 
@@ -32,6 +33,7 @@ namespace LeePresswoodSnakeFinalProject
             block_size = width / BLOCKS_ACROSS;
             next_direction = Direction.Right;
 
+            old_segments = new List<GameTile>();
             segments = new List<GameTile>();
             segments.Add(new GameTile(2, 2));
 
@@ -40,6 +42,13 @@ namespace LeePresswoodSnakeFinalProject
 
         public void update()
         {//Game tick happened, so move the snake forward according to the next_direction variable.
+            //Store the old locations of the snake.
+            old_segments.Clear();
+            foreach(GameTile segment in segments)
+            {
+                old_segments.Add(new GameTile(segment.x, segment.y));
+            }
+            
             //For all snake segments behind the head, move.
             if (segments.Count() > 1)
             {
