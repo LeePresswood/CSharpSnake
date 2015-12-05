@@ -40,7 +40,7 @@ namespace LeePresswoodSnakeFinalProject
 
         public void update()
         {//Game tick happened, so move the snake forward according to the next_direction variable.
-            //Store the old locations of the snake.
+            //Store the old locations of the snake for redrawing later.
             old_tail.x = segments.Last().x;
             old_tail.y = segments.Last().y;
             
